@@ -14,7 +14,7 @@ load_css(css_path)
 st.title("Whatsapp chat analyser")
 
 uploaded_file = st.sidebar.file_uploader("choose a file")
-st.sidebar.caption("please choose the chat file in the date format of dd/mm/yyyy, hh:mm")
+st.sidebar.caption("please choose the chat file in the date format of DD/MM/YYYY, HH:MM (24 hrs format)")
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8")
@@ -99,6 +99,17 @@ if uploaded_file is not None:
         fig, ax = plt.subplots()
         ax = (seaborn.heatmap(htMap))
         st.pyplot(fig)
+
+    # Footer
+    st.markdown(
+        """
+        <div class="footer">
+            A project made by <a href="https://harsh-portfolio-24.netlify.app/" target="_blank">Harsh Kumar</a>
+            <p>dec, 2024</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 
