@@ -1,8 +1,8 @@
-from urlextract import URLExtract
+# from urlextract import URLExtract
 import pandas as pd
 from collections import Counter
 from wordcloud import WordCloud
-extract = URLExtract()
+# extract = URLExtract()
 
 def fetchData(user, df):
 
@@ -18,11 +18,11 @@ def fetchData(user, df):
         words.extend(msg.split())
 
     #no of links
-    link = []
-    for msg in df['message']:
-        link.extend(extract.find_urls(msg))
-    
-    return msgNum, len(words), mediaNum, len(link)
+    # link = []
+    # for msg in df['message']:
+    #     link.extend(extract.find_urls(msg))
+    a=87
+    return msgNum, len(words), mediaNum, a
 
 def most_active(df):
     counts = df['user'].value_counts().reset_index().rename(columns={'count':'number_of_message'})
