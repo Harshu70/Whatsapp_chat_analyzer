@@ -4,6 +4,12 @@ import pathlib
 import seaborn
 import matplotlib.pyplot as plt
 
+st.set_page_config(
+    page_title="Whatsapplyzer",
+    page_icon="🚀",
+    layout="centered",
+)
+
 def load_css(file_path):
     with open(file_path) as f:
         st.html(f"<style>{f.read()}</style>")
