@@ -14,6 +14,7 @@ load_css(css_path)
 st.title("Whatsapp chat analyser")
 
 uploaded_file = st.sidebar.file_uploader("choose a file")
+st.sidebar.caption("please choose the chat file in the date format of dd/mm/yyyy, hh:mm")
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     data = bytes_data.decode("utf-8")
@@ -33,7 +34,6 @@ if uploaded_file is not None:
     if st.sidebar.button("Analysis of"):
         msgNum, wordNum, mediaNum, linkNum = stats.fetchData(selectedUser, df)
         c1, c2, c3, c4 = st.columns(4)
-
         with c1:
             st.header("Total Message")
             st.title(msgNum)
