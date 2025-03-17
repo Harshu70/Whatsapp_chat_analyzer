@@ -40,7 +40,7 @@ def wrdCloud(user, df):
     temp_df = df[df['user']!='group_notification']
     temp_df = temp_df[temp_df['message'] != '<Media omitted>\n']
     wc = WordCloud(width=500, height=500, min_font_size=10, background_color='white')
-    df_wc = wc.generate(temp_df['message'].str.cat(sep=" "))
+    df_wc = wc.generate(temp_df['message'].astype(str).str.cat(sep=" "))
     return df_wc
 
 def most_cmn_word(user, df):
