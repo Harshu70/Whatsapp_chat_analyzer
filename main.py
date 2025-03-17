@@ -30,7 +30,8 @@ if uploaded_file is not None:
 
     #user dropdown
     userList = df['user'].unique().tolist()
-    userList.remove('group_notification')
+    if 'group_notification' in userList:
+        userList.remove('group_notification')
     userList.sort()
     userList.insert(0, "Overall")
 
